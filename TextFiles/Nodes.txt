@@ -1,0 +1,64 @@
+District1
+Node1 Node2
+Node2 Node1 Node3 
+Node3 Node4 Node15
+Node4 Node14 Node5
+Node5 Node6 Node4 
+Node6 Node14 Node5 Node7
+Node7 Node8 Node6 
+Node8 Node9 Node7 
+Node9 Node8 Node10
+Node10 Node9 Node11
+Node11 Node10 Node12
+Node12 Node11 Node13
+Node13 Node12
+Node14 Node6 Node4
+Node15 Node14 Node3
+Node17 Node1 Node18
+Node18 Node17 Node19
+Node19 Node20 Node15
+Node20 Node21 Node27
+Node21 Node22 Node20
+Node22 Node21 Node23
+Node23 Node22 Node24
+Node24 Node25 Node28
+Node25 Node24 Node26
+Node26 Node25 Node27
+Node27 Node20 Node26
+Node28 Node24 Node29
+Node29 Node30 Node28
+Node30 Node29 Node31
+Node31 Node30 Node22
+Node32 Node33 Node19
+Node33 Node34 Node32
+Node34 Node35 Node55
+Node35 Node34 Node36
+Node36 Node15 Node37 Node35
+Node37 Node36 Node38
+Node38 Node37 Node39 Node42
+Node39 Node38 Node40
+Node40 Node39 Node41 Node43
+Node41 Node40 Node42
+Node42 Node38 Node41
+Node43 Node40 Node44
+Node44 Node43 Node45
+Node45 Node44 Node46 Node48
+Node46 Node45 Node47
+Node47 Node46 Node35
+Node48 Node49 Node45
+Node49 Node50 Node48
+Node50 Node49 Node55 Node51
+Node51 Node50 Node52
+Node52 Node53 Node51
+Node53 Node52 Node54
+Node54 Node53 Node55
+Node55 Node54 Node34 Node50
+
+Patrol1 Node3 Node4 Node5 Node6 Node14 Node15 Node3 Node1 Node5 Node10
+Patrol2 Node7 Node8 Node9 Node10 Node11 Node12 Node13
+Patrol3 Node6 Node14 Node4 Node5 Node6
+Patrol4 Node12 Node11 Node10 Node9 Node13
+Patrol5 Node21 Node22 Node23 Node24 Node25 Node26 Node27 Node20
+Patrol6 Node30 Node29 Node28 Node24 Node23 Node22 Node31
+Patrol7 Node55 NOde54 Node53 Node52 Node51 Node50 NOde49 Node48 Node45 Node46 Node47 Node35 Node34 Node55
+Patrol8 Node40 Node39 Node38 Node42 Node41
