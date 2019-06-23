@@ -14,7 +14,7 @@ class DialoguesManager :
 public:
 	DialoguesManager();
 	~DialoguesManager();
-	void evento(vector <pair<string, string>> phrases);
+	void evento(vector <string> phrases);
 	void update(int deltaTime);
 
 
@@ -22,7 +22,6 @@ private:
 	
 	int time_;
 	Text* txt_;
-	bool english = true;
 	bool displaying_;
 	int maxTime_;
 	Font* font_;

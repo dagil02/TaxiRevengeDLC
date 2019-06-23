@@ -20,7 +20,7 @@ DialoguesManager::DialoguesManager()
 	txt_->setAutoPos(true);
 	txt_->setAutoSize(false);
 	txt_->setSize(600, 80);
-	//evento(muerte);
+
 }
 
 
@@ -31,13 +31,12 @@ DialoguesManager::~DialoguesManager() {
 	delete font_; font_ = nullptr;
 }
 
-void DialoguesManager::evento(vector <pair<string, string>> phrases)
+void DialoguesManager::evento(vector <string> phrases)
 {
 	if (!displaying_) {
 		
 		int random = rand() % phrases.size();
-		if (english) txt_->setText(phrases[random].second);
-		else txt_->setText(phrases[random].first); 
+		 txt_->setText(phrases[random]); 
 		displaying_ = true;
 		maxTime_ = timeDialogues_;
 	}
