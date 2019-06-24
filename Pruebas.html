@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>  
+      <title> TAXI REVENGE </title>
+        <link href="styles.css" rel="stylesheet" type="text/css"/>
+        <style>
+            body
+            {
+                background: url('imagenes/Wall.png');
+                font-family: PaintFont;
+            }
+            .wrapper {
+            display: flex;  
+            flex-flow: row wrap;
+            flex-direction: column;
+            font-weight: bold;
+            text-align: center;
+            }
+
+            .wrapper > * {
+            padding: 10px;
+            flex: 1 100%;
+            }
+
+            .header {
+                width: 100%;
+                max-width: 3000px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .footer {
+                width: 1800px;
+      
+            margin-left: auto;
+                margin-right: auto;
+            }
+
+            .main {
+                display: flexbox;
+                text-align: center; 
+                font-size-adjust: initial;
+                align-content: center;
+                color: rgb(31, 31, 31);
+           
+                width: 1000px;
+                height: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            p.poem
+            {
+               display: flex;
+                position: relative;
+                z-index: 1;
+                font-size: 50px;
+                float: center;
+                width: 800px;  
+                left: 68%;
+                transform: translate(-50%, -50%);
+                top:-300px;
+            }
+            img.poem
+            {
+                display: flex;
+                position: relative;
+                z-index: 0;
+                vertical-align: center;
+                width: 50%;
+                margin-left: auto;
+                margin-right: auto;
+                top:0px;
+            }
+            img.resume
+            {
+                display: flex;
+                position: relative;
+                z-index: 0;
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                top: -530px;
+                transform: rotate(-8deg);
+            }
+            p.resume
+            {
+               display: flex;
+                position: relative;
+                
+                text-align: justify;
+                z-index: 1;
+                float: left;
+                font-size:  30px;
+                width: 800px;       
+                margin-top: -300px;
+                left: 50%;
+                top: -420px;
+                transform: translate(-50%, -50%);
+                color: rgba(255, 255, 255);
+            }
+            .featureFight {
+                display:flex;
+                text-size-adjust:unset;
+             
+                color: rgb(0, 0, 0);
+                width: 1800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .featureExplore
+            {
+                display:flex;
+           
+                color: rgb(0, 0, 0);
+                width: 1800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .featureDrive
+            {
+                display:flex;
+              
+                color: rgb(0, 0, 0);
+                width: 1800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .featureArt
+            {
+                display:flex;
+             
+                color: rgb(0, 0, 0);
+                width: 1800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .featureGasoline
+            {
+                display:flex;
+              
+                color: rgb(0, 0, 0);
+                width: 1800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            @media all and (min-width: 600px) {
+            .aside { flex: 1 0 0; }
+            }
+
+            @media all and (min-width: 800px) {
+            .main    { flex: 3 0px; }
+            .main    { order: 1; }
+            .featureFight { order: 2; } 
+            .featureExplore { order: 3;}
+            .featureDrive { order: 4; }
+            .featureArt { order: 5;}
+            .featureGasoline { order: 6; }
+            .footer  { order: 10; }
+            }
+
+            body {
+            padding: 2em; 
+            
+            }
+            img.img_Head
+            {
+                display: flex;
+                position: relative;
+                width: 100%;
+                top: 0px; 
+                z-index: -1;
+            }
+            img.img_Titulo
+            {
+                display: flex;
+                position: relative;
+                width: 100%;
+                z-index: -1;
+            }
+            img.img_Tittle
+            {
+                display: flexbox;
+                min-width: 10px;
+                max-width: 1200px;
+                z-index: 0;
+            }
+            img.imgFigth
+            {
+                display: flex;
+                position: relative;
+                width: 1600px;
+                top: 0px;
+                left: 180px;
+                z-index: 2;
+            }
+            img.imgUp1
+            {
+                display: flex;
+                position: relative;
+                width: 1200px;
+                height: 750px;
+                top: 600px;
+                left: -240px;
+            }
+            img.imgFondo1
+            {
+                display: flex;
+                position: relative;
+                width: 1200px;
+                height: 750px;
+                top: -635px;
+                left: -10px;
+                z-index: -2;
+            }
+            img.imgBeforeTxt2
+            {
+                display: flex;
+                position: relative;
+                top: 0px;
+                left: 400px;
+                width: 400px;
+                transform: rotate(-5deg);
+                height: 250px;
+            }
+            img.imgBeforeTxt1
+            {
+                display: flex;
+                position: relative;
+                top: 0px;
+                left: 1200px;
+                width: 600px;
+                height: 400px;
+            }
+            p.FeaturesI1
+            {
+                display: flex;
+                position: relative;
+                text-align: justify;
+                z-index: 1;
+                float: left;
+                left: 480px;
+                top: 0px;
+                transform: rotate(-5deg);
+                font-size: 100px;   
+                color: rgb(31, 31, 31);
+            }
+            p.FeaturesIC
+            {
+                display: flex;
+                position: relative;
+                z-index: 1;
+                float: left;
+                left: 1250px;
+                top: -100px;
+                width: 500px;
+                font-size: 50px;   
+                color: rgb(31, 31, 31);
+            }
+            div.Fight
+            {
+                position: relative;
+                top: 0px;
+            }
+            div.Explore
+            {
+                position: relative;
+                top: 0px;
+            }
+            div.Drive
+            {
+                position: relative;
+                top: 0px;
+            }
+            div.Art
+            {
+                position: relative;
+                top: 0px;
+            }
+            div.Gasoline
+            {
+                position: relative;
+                top: 0px;
+            }
+            iframe.TrailerVid
+            {
+                display: flex;
+                position: relative;
+                top: -630px;
+                width: 1000px;
+                left: 0px;
+                max-width: 100%;
+                max-height: 50%;
+                height: 450px;
+            }
+            div.menu
+            {
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 9.9%;
+                background-image: url('imagenes/Wall1.png');
+                background-size: 10%;
+                font-size: 6vh;
+                font-family: PaintFont;  
+                z-index: 10;
+            }
+            a.github
+            {
+                position: relative;
+                left: 2%;
+                top: 15%;
+            }
+            a.download
+            {
+                position: relative;
+                left: 5%;
+                top: 15%;
+            }
+            a.developers
+            {
+                position: relative;
+                left: 8%;
+                top: 15%;
+            }
+            a.history
+            {
+                position: relative;
+                left: 11%;
+                top: 15%;
+            }
+            a:link {
+                text-decoration: none;
+                opacity: 0.8;
+            }
+            
+            a:visited {
+                text-decoration: none;
+                
+                opacity: 1;
+            }
+            a:hover {
+                text-decoration: none;
+               
+                opacity: 1;
+            }
+            a:active {
+                text-decoration: none;
+                
+                opacity: 1;
+            }
+        </style>
+        <div class="menu">
+                <a class="github" href="https://github.com/DavidCarmonaFauste/GrandTheftTaxi" style="color:rgb(19, 19, 19)">-\Project/-</a>
+                <a class="download" href="TaxiRevenge.msi" download style="color:rgb(255, 196, 0)">-DOWNLOAD-</a>
+                <a class="developers" href="Developers.html" style="color:rgb(19, 19, 19)"> Who made this ***** piece of art?!!</a>
+                <a class="history" href="Developers.html" style="color:rgb(255, 255, 255)"> History</a>
+            </div>
+            <div class="wrapper">
+                <header class="header">            
+                    <img src = "imagenes/Head.gif" class="img_Head">
+                </header>
+                <aside class="main">
+                    <img src = "imagenes/Post4.png" class="poem">
+                    <p class="poem"> 
+                        Who is the new king? <br>
+                        our Capitalist?<br>
+                        our fake Socialist?<br>
+                        no, is our taxist,<br>
+                        because taxis<br>
+                         will fucking win.
+                    </p> 
+                    <img src = "imagenes/fondo.png" class="resume"> 
+                    <p class="resume"> Inspired by classic 2D sandboxs
+                            like GTA, TaxiRevenge is a videogame where you have to destroy all the 
+                            vtc in your neighborhood. You will be an old taxi driver, who, tired of the
+                            economic freedom boom, decides to create his own utopia without
+                            private transport services. </p>
+                            <iframe class="TrailerVid"
+                            src="https://www.youtube.com/embed/8SeewZ0yAjY">
+                            </iframe>  
+                </aside>
+
+                <aside class="featureFight"> 
+                        <img src="imagenes/features.png" style="width: 1700px; height: 900px; position: relative; left: 0px; top: -700px;">  
+                        <p class="FeaturesI1" style="left: -1200px;"> Fi_ght! </p>
+                        <img src="imagenes/Figth.gif" style="width: 1700px; height: 900px; position: relative; left: -2250px; transform: rotate(-5deg)">
+                        <img src="imagenes/Post3.png" style="width: 700px; height: 200px; position: relative; left: -3200px; top: 90px; transform: rotate(-5deg)">
+                        <img src="imagenes/Post1.png" style="width: 600px; height: 600px; position: relative; left: -2700px; top: 150px; transform: rotate(5deg)">
+
+                            </aside>
+                <aside class="featureExplore">
+                        <p class="FeaturesI1" style="font-size: 70px; left: 1110px;"> Explore!* </p>
+                        <img src="imagenes/map.gif" style="width: 1200px; height: 650px; position: relative; left: 400px;">
+                        <img src="imagenes/Post2.png" style="width: 800px; height: 250px; position: relative; left: -350px; top: 0px; transform: rotate(0deg)">
+                        <img src="imagenes/Post1.png" style="width: 600px; height: 600px; position: relative; left: -1670px; top: -50px; transform: rotate(-5deg)">
+                </aside>
+                <aside class="featureDrive">
+                        <p class="FeaturesI1" style="font-size: 79px;"> Drive:! </p>
+                        <img src="imagenes/Figth.gif" style="width: 1700px; height: 900px; position: relative; left: -500px; transform: rotate(-3deg)">
+                        <img src="imagenes/Post4.png" style="width: 800px; height: 250px; position: relative; left: -1470px; top: 0px; transform: rotate(-3deg)">
+                        <img src="imagenes/Post1.png" style="width: 600px; height: 600px; position: relative; left: -1000px; top: 150px; transform: rotate(0deg)">
+                </aside>
+                <aside class="featureArt">
+                        <p class="FeaturesI1" style="left: 1200px; top: -70px;"> _Art </p>
+                        <img src="imagenes/art3.png" style="width: 1000px; height: 650px; position: relative; left: 650px; transform: rotate(0deg)">
+                        <img src="imagenes/Post3.png" style="width: 800px; height: 250px; position: relative; left: -50px; top: 0px; transform: rotate(0deg)">
+                        <img src="imagenes/Post1.png" style="width: 600px; height: 600px; position: relative; left: -1300px; top: 20px; transform: rotate(-5deg)">
+                </aside>
+                <aside class="featureGasoline">
+                        <p class="FeaturesI1" style="font-size: 70px;"> Gasoline </p>
+                        <img src="imagenes/gasoline.gif" style="width: 1700px; height: 900px; position: relative; left: -500px; transform: rotate(-3deg)">
+                        <img src="imagenes/Post2.png" style="width: 800px; height: 250px; position: relative; left: -1550px; top: 0px; transform: rotate(-3deg)">
+                        <img src="imagenes/Post1.png" style="width: 600px; height: 600px; position: relative; left: -1000px; top: 150px; transform: rotate(0deg)">
+                </aside>
+
+            <footer class="footer">
+                    <p style= "
+                    font-size: 50px;
+                    text-align: justify;
+                    float: left; 
+                    width: 370px; 
+                    position: relative; 
+                    left: 1270px; 
+                    top: -3900px;
+                    transform: rotate(5deg);
+                    color:rgb(36, 36, 36)">
+                    Destroy all the ****** VTC! to do this, Shoot without thinking it with your shotgun or in a classic form with your gun </p>
+                    <p style= "
+                    font-size: 50px;
+                    text-align: justify;
+                    float: left; 
+                    width: 370px; 
+                    position: relative; 
+                    left: -230px; 
+                    top: -3230px;
+                    transform: rotate(-5deg);
+                    color:rgb(36, 36, 36)" > 
+                    Killing is good, yes, but... Driving only to see the beach? Yes that's it, you can fight, you can drive, but remember that you need a moment to relax  </p>
+                   <p  style= "
+                   font-size: 50px;
+                   text-align: justify;
+                   float: left; 
+                   width: 370px; 
+                   position: relative; 
+                   left: 450px; 
+                   top: -2350px;
+                   color:rgb(36, 36, 36)">
+                   Ok. we are going to admit that Fast and Furius is the best-worst film in the world, and we understand that you need to be the Rock at some moments </p>
+
+                   <p style= "
+                   font-size: 50px;
+                   text-align: justify;
+                   float: left; 
+                   width: 370px; 
+                   position: relative; 
+                   left: -860px; 
+                   top: -1550px;
+                   transform: rotate(-5deg);
+                   color:rgb(36, 36, 36)" >
+                    Please dont read this, only look at this ***** piece of art, all that cubes near other cubes, perrrrfect like the social economy  </p>
+
+                   <p  style= "
+                    font-size: 50px;
+                    text-align: justify;
+                    float: left; 
+                    width: 370px; 
+                    position: relative; 
+                    left: 280px; 
+                    top: -1350px;
+                    color:rgb(36, 36, 36)" > 
+                    The taxis are not magical. and need something to work. Manage and take care of your gasoline, if you run out of fuel you will die, remember it </p>
+                    <img style= "position: relative; top: -1100px; left: 500px;" width="500" height="500" src="imagenes/YuzuLogo.png">
+                    <img style= "position: relative; top: -500px;" width="500" height="500" src="imagenes/info.png">
+                    <img style= "position: relative; top: 100px; left: -500px;" width="500" height="500" src="imagenes/escudo.png">
+                </footer>
+        </div>
+</html>

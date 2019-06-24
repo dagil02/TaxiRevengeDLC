@@ -1,0 +1,9 @@
+
+@font-face {
+    font-family: PaintFont;
+    src: url("Painterz.ttf");
+}
+#main
+{
+    font-family: PaintFont;
+}
