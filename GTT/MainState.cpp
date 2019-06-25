@@ -67,6 +67,8 @@ void MainState::start() {
 	GameManager::getInstance()->setEnemyCount(EnemyManager::getInstance()->GetEnemyCount());
 
 	 stage_.push_back(new DamageUpgrade(50, 50, Vehicle::getInstance()->getPosition().x -200, Vehicle::getInstance()->getPosition().y)); 
+	 stage_.push_back(new FuelUpgrade(50, 50, Vehicle::getInstance()->getPosition().x - 400, Vehicle::getInstance()->getPosition().y));
+	 stage_.push_back(new SpeedUpgrade(50, 50, Vehicle::getInstance()->getPosition().x - 600, Vehicle::getInstance()->getPosition().y));
 }
 
 void MainState::end()

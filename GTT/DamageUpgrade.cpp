@@ -5,7 +5,7 @@
 DamageUpgrade::DamageUpgrade(int w, int h, int x, int y) : Trigger(w, h, x, y)
 {
 	sprite_ = new Animation();
-	sprite_->loadAnimation("../Assets/sprites/fuelupgrade.png", "idle");
+	sprite_->loadAnimation("../Assets/sprites/damageupgrade.png", "idle");
 	sprite_->playAnimation("idle");
 	this->addRenderComponent(sprite_);
 }
