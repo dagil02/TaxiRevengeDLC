@@ -73,6 +73,7 @@ public:
 	Vector2D spawnPosition_;
 	float32 maxBackwardSpeed_;
 	float32 acceleration_;
+	float32 normalAcceleration_;
 	bool alive_;
 	bool zombie_;
 	int deathTime_;

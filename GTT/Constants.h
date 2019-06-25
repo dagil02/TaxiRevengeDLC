@@ -38,6 +38,7 @@ const struct VehicleInfo {
 	int pursuitRange = TILE_SIZE * 20;
 	int AIspeed = 4;
 	int HP = 1000;
+
 };
 
 const enum ImpactMode {
