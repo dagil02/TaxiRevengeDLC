@@ -56,9 +56,10 @@ void Health::setHealth(int health) {
 	health_ = health;
 }
 
-void Health::increaseMaxHealth()
+void Health::restoreHealth()
 {
-	maxHealth_ += HP_INCREASE;
+	if(health_ <= maxHealth_ * 0.75)health_ += maxHealth_ * 0.25;
+	else health_ = maxHealth_;
 }
 
 bool Health::receiveEvent(Event& e) {

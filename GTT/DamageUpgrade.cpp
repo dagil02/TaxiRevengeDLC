@@ -1,6 +1,8 @@
-#include "FuelUpgrade.h"
+#include "DamageUpgrade.h"
 
-FuelUpgrade::FuelUpgrade(int w, int h, int x, int y) : Trigger(w, h, x, y)
+
+
+DamageUpgrade::DamageUpgrade(int w, int h, int x, int y) : Trigger(w, h, x, y)
 {
 	sprite_ = new Animation();
 	sprite_->loadAnimation("../Assets/sprites/fuelupgrade.png", "idle");
@@ -9,23 +11,24 @@ FuelUpgrade::FuelUpgrade(int w, int h, int x, int y) : Trigger(w, h, x, y)
 }
 
 
-FuelUpgrade::~FuelUpgrade()
+DamageUpgrade::~DamageUpgrade()
 {
 	delete sprite_; sprite_ = nullptr;
 }
 
-void FuelUpgrade::beginCallback(b2Contact * contact)
+void DamageUpgrade::beginCallback(b2Contact * contact)
 {
 	b2Body* body = phyO_->getBody();
 	b2Body* taxiBody = Vehicle::getInstance()->GetPhyO()->getBody();
+	Vehicle* taxiTurret = Vehicle::getInstance();
 
 	if ((contact->GetFixtureA()->GetBody() == body || contact->GetFixtureA()->GetBody() == taxiBody)
 		&& (contact->GetFixtureB()->GetBody() == body || contact->GetFixtureB()->GetBody() == taxiBody)) {
-		Vehicle::getInstance()->getHealthComponent()->restoreHealth();
+		taxiTurret->DamageBost();
 		active_ = false;
 	}
 }
 
-void FuelUpgrade::endCallback(b2Contact * contact)
+void DamageUpgrade::endCallback(b2Contact * contact)
 {
 }

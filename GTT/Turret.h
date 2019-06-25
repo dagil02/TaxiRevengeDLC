@@ -26,6 +26,7 @@ public:
 	virtual void PerfectReload();
 	virtual void CancelReload();
 	virtual void InitiateReload();
+	virtual void upgradeShoot();
 	virtual int GetCadence();
 	virtual int GetAmmo();
 	virtual int GetMaxAmmo();
@@ -57,6 +58,7 @@ protected:
 	double perfRelSeg_;//segmento del tiempo de recarga en el que entra en accion la recarga perfecta (en tanto por 1)
 	double perfRelIni_;//momento dentro del tiempo de recarga en el que empieza el segmento de recarga perfecta (en tanto por 1)
 	bool reloading_;//indica si se esta recargando en el momento
+	bool boostTime_;//indica si el jugador se encuentra en el momento de la mejora de disparo
 	bool charged_;//indica si esta cargado el disparo
 	bool automatic_;//indica si la torreta es de disparo automatico
 	int chargedShotDelay_;//tiempo de espera añadido a la cadencia para poder disparar otra bala tras un disparo cargado

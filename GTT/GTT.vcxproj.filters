@@ -306,6 +306,12 @@
     <ClCompile Include="ShopManager.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="DamageUpgrade.cpp">
+      <Filter>Archivos de origen\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="SpeedUpgrade.cpp">
+      <Filter>Archivos de origen\GameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InputComponent.h">
@@ -565,6 +571,12 @@
     </ClInclude>
     <ClInclude Include="DeathState.h">
       <Filter>Archivos de encabezado\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="DamageUpgrade.h">
+      <Filter>Archivos de encabezado\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="SpeedUpgrade.h">
+      <Filter>Archivos de encabezado\GameObjects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

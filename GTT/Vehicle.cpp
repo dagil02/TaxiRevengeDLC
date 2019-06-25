@@ -90,6 +90,15 @@ Turret * Vehicle::getCurrentTurret()
 	return turrets_[currentTurret_];
 }
 
+void Vehicle::DamageBost()
+{
+	turrets_[currentTurret_]->upgradeShoot();
+}
+
+void Vehicle::SpeedBost()
+{
+	acceleration_ += 10;
+}
 
 void Vehicle::handleInput(Uint32 time, const SDL_Event & event)
 {

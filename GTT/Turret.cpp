@@ -19,6 +19,7 @@ Turret::Turret(WeaponInfo w)
 	chargeprogress_ = SDL_GetTicks();
 	reloading_ = false;
 	charged_ = false;
+	boostTime_ = false;
 
 	animSpeed_ = w.animSpeed_;
 	maxAmmo_ = w.maxAmmo;
@@ -155,14 +156,17 @@ void Turret::AttachToVehicle(Car * car)
 	}
 }
 
-
+void Turret::upgradeShoot()
+{
+	boostTime_ = true;
+}
 
 void Turret::Shoot()
 {
 	if (!magazine_.empty() && !reloading_) {
 		int a = SDL_GetTicks() - lastTimeShot_;
 		if (a >= cadence_) {
-			if (charged_) {
+			if (charged_ || boostTime_) {
 				crr_ActionShoot_ = specialB.idShoot; //asign int for capture in ShootIC and play sound
 				specialB.damage = magazine_.back()*defaultSpecialDMG_;
 				SPshC_->shoot(specialB, false);
