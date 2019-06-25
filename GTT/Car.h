@@ -25,6 +25,7 @@ public:
 	float32 GetTurnSpeed();
 	virtual AimComponent* GetAimComponent();
 	Health* getHealthComponent();
+	virtual 
 	virtual void setPosition(const Vector2D &pos, bool force = false) override;
 
 	virtual bool receiveEvent(Event& e) { return false; };

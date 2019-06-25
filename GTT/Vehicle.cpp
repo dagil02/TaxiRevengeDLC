@@ -90,6 +90,15 @@ Turret * Vehicle::getCurrentTurret()
 	return turrets_[currentTurret_];
 }
 
+void Vehicle::DamageBost(int t)
+{
+	turrets_[currentTurret_]->upgradeShoot(t);
+}
+
+void Vehicle::SpeedBost()
+{
+	acceleration_ += 10;
+}
 
 void Vehicle::handleInput(Uint32 time, const SDL_Event & event)
 {
@@ -99,7 +108,7 @@ void Vehicle::handleInput(Uint32 time, const SDL_Event & event)
 
 void Vehicle::update(Uint32 time) {
 	Container::update(time);
-
+	
 	if (turrets_[currentTurret_] != nullptr)
 		turrets_[currentTurret_]->update(time);
 
@@ -111,7 +120,7 @@ void Vehicle::update(Uint32 time) {
 	if (!alive_ && SDL_GetTicks() - deathTime_ >= 500) {
 		Respawn();
 	}
-
+	if (acceleration_ > 0.8f) acceleration_ -= 0.2f;
 }
 
 bool Vehicle::receiveEvent(Event & e) {
@@ -233,6 +242,7 @@ void Vehicle::initAtributtes(VehicleInfo r, KeysScheme k)
 	this->maxBackwardSpeed_ = r.velBackwardMax;
 	this->turnSpeed_ = r.turnSpeed;
 	this->acceleration_ = r.acceleration;
+	this->normalAcceleration_ = this->acceleration_;
 
 	// Physics
 	phyO_ = new PhysicObject(b2_dynamicBody, r.width, r.height, position_.x, position_.y);

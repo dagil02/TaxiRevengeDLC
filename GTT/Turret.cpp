@@ -17,8 +17,10 @@ Turret::Turret(WeaponInfo w)
 	addRenderComponent(animC_);
 	lastTimeShot_ = -1000;
 	chargeprogress_ = SDL_GetTicks();
+	boostprogress_ = SDL_GetTicks();
 	reloading_ = false;
 	charged_ = false;
+	boost_ = false;
 
 	animSpeed_ = w.animSpeed_;
 	maxAmmo_ = w.maxAmmo;
@@ -110,7 +112,12 @@ void Turret::update(Uint32 deltaTime)
 			charged_ = true;
 		}
 	}
-
+	if (boost_) {
+		if (SDL_GetTicks() - boostprogress_ >= boostTime_)  {
+			boost_ = false;
+			boostprogress_ = SDL_GetTicks();
+		}
+	}
 	sparkleEffect_.update(deltaTime);
 	shotEffect_.update(deltaTime);
 
@@ -155,14 +162,18 @@ void Turret::AttachToVehicle(Car * car)
 	}
 }
 
-
+void Turret::upgradeShoot(int t)
+{
+	boostTime_ = t;
+	boost_ = true;
+}
 
 void Turret::Shoot()
 {
 	if (!magazine_.empty() && !reloading_) {
 		int a = SDL_GetTicks() - lastTimeShot_;
 		if (a >= cadence_) {
-			if (charged_) {
+			if (charged_ || boost_) {
 				crr_ActionShoot_ = specialB.idShoot; //asign int for capture in ShootIC and play sound
 				specialB.damage = magazine_.back()*defaultSpecialDMG_;
 				SPshC_->shoot(specialB, false);

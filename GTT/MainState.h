@@ -9,6 +9,8 @@
 #include "Respawner.h"
 #include "Shop.h"
 #include "FuelUpgrade.h"
+#include "SpeedUpgrade.h"
+#include "DamageUpgrade.h"
 
 class MainState :
 	public GameState

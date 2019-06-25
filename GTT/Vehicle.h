@@ -56,6 +56,8 @@ public:
 	virtual void EquipTurret(Turret* turret);
 	virtual void ChangeTurret();
 	Turret* getCurrentTurret();
+	void DamageBost(int t);
+	void SpeedBost();
 
 	virtual void handleInput(Uint32 time, const SDL_Event& event);
 	virtual void render(Uint32 time);
@@ -71,6 +73,7 @@ public:
 	Vector2D spawnPosition_;
 	float32 maxBackwardSpeed_;
 	float32 acceleration_;
+	float32 normalAcceleration_;
 	bool alive_;
 	bool zombie_;
 	int deathTime_;

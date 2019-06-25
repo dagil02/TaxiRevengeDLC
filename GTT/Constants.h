@@ -38,6 +38,7 @@ const struct VehicleInfo {
 	int pursuitRange = TILE_SIZE * 20;
 	int AIspeed = 4;
 	int HP = 1000;
+
 };
 
 const enum ImpactMode {
@@ -93,6 +94,7 @@ const struct WeaponInfo {
 	int muzzanimframes;
 	string sparklePath = "../Assets/sprites/Turrets/sparkle_anim.png";
 	int sparkleanimframes = 3;
+
 };
 
 const struct frameAnimation {
