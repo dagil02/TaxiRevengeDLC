@@ -94,6 +94,7 @@ const struct WeaponInfo {
 	int muzzanimframes;
 	string sparklePath = "../Assets/sprites/Turrets/sparkle_anim.png";
 	int sparkleanimframes = 3;
+
 };
 
 const struct frameAnimation {

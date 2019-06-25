@@ -24,7 +24,7 @@ void DamageUpgrade::beginCallback(b2Contact * contact)
 
 	if ((contact->GetFixtureA()->GetBody() == body || contact->GetFixtureA()->GetBody() == taxiBody)
 		&& (contact->GetFixtureB()->GetBody() == body || contact->GetFixtureB()->GetBody() == taxiBody)) {
-		taxiTurret->DamageBost();
+		taxiTurret->DamageBost(boostTime);
 		active_ = false;
 	}
 }

@@ -56,7 +56,7 @@ public:
 	virtual void EquipTurret(Turret* turret);
 	virtual void ChangeTurret();
 	Turret* getCurrentTurret();
-	void DamageBost();
+	void DamageBost(int t);
 	void SpeedBost();
 
 	virtual void handleInput(Uint32 time, const SDL_Event& event);

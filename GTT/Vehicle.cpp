@@ -90,9 +90,9 @@ Turret * Vehicle::getCurrentTurret()
 	return turrets_[currentTurret_];
 }
 
-void Vehicle::DamageBost()
+void Vehicle::DamageBost(int t)
 {
-	turrets_[currentTurret_]->upgradeShoot();
+	turrets_[currentTurret_]->upgradeShoot(t);
 }
 
 void Vehicle::SpeedBost()
