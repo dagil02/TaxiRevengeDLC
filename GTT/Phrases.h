@@ -33,10 +33,11 @@ const vector <string> kill = {
 };
 
 const vector <string> tutorial = {
-	" Para atacar solo tiene que pulsar el -click izquierdo- da ?" , 
 	" Atiende tovarishchi, usa -WASD- para conducir" ,
-	" Recuerda camarada si los giros se te hacen algo tyazhelyy, usa -SPACEBAR- para derrapar da ?" ,
-	" Si te quedas sin gasolina puedes usar las gasolineras para repostar da ? Simplemente acercate y pulsa -G- da ?" ,
+	" Para atacar solo tiene que pulsar el -click izquierdo- da ?" ,
+	" Si los giros se te hacen algo tyazhelyy, usa -SPACEBAR- para derrapar da ?" ,
+	" Si te quedas sin gasolina puedes usar las gasolineras para repostar da ?",
+	" Simplemente acercate a una gasolinera y pulsa -G- da ?" ,
 	" Ahi estan esos sucios VTC! hazle el favor a Galenka de destruirlos da ?"
 };
 

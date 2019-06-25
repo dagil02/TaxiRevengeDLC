@@ -16,6 +16,7 @@ public:
 	~DialoguesManager();
 	void evento(vector <string> phrases);
 	void update(int deltaTime);
+	void eventoEnCadena(vector <string> phrases);
 
 
 private:
@@ -28,6 +29,9 @@ private:
 	SDL_Color color_;
 	Vector2D pos_;
 	int w_, h_;
-	int timeDialogues_ = 10000;
+	int timeDialogues_ = 12000;
+	int act_;
+	bool eventChain_;
+	vector <string> phrases_;
 };
 

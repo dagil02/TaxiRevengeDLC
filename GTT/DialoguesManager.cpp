@@ -7,6 +7,8 @@ DialoguesManager::DialoguesManager()
 	time_ = 0;
 	displaying_ = false;
 	maxTime_ = 0;
+	act_ = 0;
+	eventChain_ = false;
 	
 	pos_ = Vector2D(500, 800);
 	setPosition(pos_);
@@ -17,10 +19,13 @@ DialoguesManager::DialoguesManager()
 	
 	txt_->setCamera(UI_CAMERA);
 	addRenderComponent(txt_);
-	txt_->setAutoPos(true);
+	txt_->setAutoPos(false);
 	txt_->setAutoSize(false);
-	txt_->setSize(600, 80);
+	txt_->setSize(1000, 50);
+	txt_->setPos(150, 600);
 
+
+	eventoEnCadena(tutorial);
 }
 
 
@@ -33,7 +38,7 @@ DialoguesManager::~DialoguesManager() {
 
 void DialoguesManager::evento(vector <string> phrases)
 {
-	if (!displaying_) {
+	if (!displaying_ && !eventChain_) {
 		
 		int random = rand() % phrases.size();
 		 txt_->setText(phrases[random]); 
@@ -44,7 +49,7 @@ void DialoguesManager::evento(vector <string> phrases)
 
 void DialoguesManager::update(int deltaTime)
 {
-	if (displaying_) {
+	if (displaying_ ) {
 
 		time_ += deltaTime;
 		if (time_ > maxTime_) {
@@ -53,5 +58,35 @@ void DialoguesManager::update(int deltaTime)
 			maxTime_ = 0;
 			time_ = 0;
 		}
+	}
+
+
+	if (eventChain_) {
+		time_ += deltaTime;
+		if (time_ > maxTime_) {
+			act_++;
+			if (act_ < phrases_.size()) {
+				txt_->setText(phrases_[act_]);
+				time_ = 0;
+			}
+			else {
+				act_ = 0;
+				txt_->setText(" ");
+				eventChain_ = false;
+				maxTime_ = 0;
+				time_ = 0;
+			}
+			
+		}
+	}
+}
+
+void DialoguesManager::eventoEnCadena(vector<string> phrases)
+{
+	if (!displaying_ && !eventChain_) {
+		phrases_ = phrases;
+		txt_->setText(phrases[0]);
+		eventChain_ = true;
+		maxTime_ = timeDialogues_;
 	}
 }
