@@ -33,5 +33,8 @@ private:
 	int act_;
 	bool eventChain_;
 	vector <string> phrases_;
+	
+	int historia_;
+	int contHist_;
 };
 

@@ -46,7 +46,17 @@ const vector <string> pocaVida = {
 	"POR LA MADRE RUSIA!! BYSTRO BYSTRO VETE A UNA GASOLINERA CUANTO ANTES!" 
 };
 
-
+const vector <string> historia = {
+	" Atiende tovarishchi, es hora de luchar" ,
+	" Como cambian las cosas en 30 años, no?" ,
+	" Despues de lo de 2037 no hubo vuelta a atras" ,
+	" Ahora seguro que piensas que estabas mejor muerto",
+	" Te hemos dado todo lo que necesitas, haz tu trabajo" ,
+	" Nuestro lema es: VTC muerto, abono pa mi huerto" ,
+	" Tovarishchi, si tu caes, caemos todos" ,
+	" HAZLO POR LENIN Y LA MADRE RUSIA" ,
+	" Y recuerda, no estas solo camarada"
+};
 
 
 

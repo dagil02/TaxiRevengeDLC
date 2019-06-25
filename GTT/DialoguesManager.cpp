@@ -9,6 +9,8 @@ DialoguesManager::DialoguesManager()
 	maxTime_ = 0;
 	act_ = 0;
 	eventChain_ = false;
+	historia_ = 0;
+	contHist_ = 0;
 	
 	pos_ = Vector2D(500, 800);
 	setPosition(pos_);
@@ -25,7 +27,7 @@ DialoguesManager::DialoguesManager()
 	txt_->setPos(150, 600);
 
 
-	eventoEnCadena(tutorial);
+	//eventoEnCadena(tutorial);
 }
 
 
@@ -49,6 +51,7 @@ void DialoguesManager::evento(vector <string> phrases)
 
 void DialoguesManager::update(int deltaTime)
 {
+	contHist_ += deltaTime;
 	if (displaying_ ) {
 
 		time_ += deltaTime;
@@ -57,11 +60,12 @@ void DialoguesManager::update(int deltaTime)
 			displaying_ = false;
 			maxTime_ = 0;
 			time_ = 0;
+			contHist_ = 0;
 		}
 	}
 
 
-	if (eventChain_) {
+	else if (eventChain_) {
 		time_ += deltaTime;
 		if (time_ > maxTime_) {
 			act_++;
@@ -75,9 +79,16 @@ void DialoguesManager::update(int deltaTime)
 				eventChain_ = false;
 				maxTime_ = 0;
 				time_ = 0;
+				contHist_ = 0;
 			}
 			
 		}
+	}
+	else if (historia_< historia.size() && contHist_ > 10000) {
+		txt_->setText(historia[historia_]);
+		displaying_ = true;
+		maxTime_ = timeDialogues_;
+		historia_++;
 	}
 }
 
