@@ -117,6 +117,7 @@ void Turret::update(Uint32 deltaTime)
 			boost_ = false;
 			boostprogress_ = SDL_GetTicks();
 		}
+		sparkleanim_->playAnimation("sparkle", 6.0f, false);
 	}
 	sparkleEffect_.update(deltaTime);
 	shotEffect_.update(deltaTime);

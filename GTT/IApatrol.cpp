@@ -51,8 +51,8 @@ void IApatrol::update(GameObject* o, Uint32 deltaTime)
 		}
 	}
 
-	if(nextNode_!=nullptr)
-		cout << nextNode_->id_ << endl;
+	//if(nextNode_!=nullptr)
+		//cout << nextNode_->id_ << endl;
 }
 
 IApatrol::~IApatrol()

@@ -66,9 +66,18 @@ void MainState::start() {
 
 	GameManager::getInstance()->setEnemyCount(EnemyManager::getInstance()->GetEnemyCount());
 
-	 stage_.push_back(new DamageUpgrade(50, 50, Vehicle::getInstance()->getPosition().x -200, Vehicle::getInstance()->getPosition().y)); 
-	 stage_.push_back(new FuelUpgrade(50, 50, Vehicle::getInstance()->getPosition().x - 400, Vehicle::getInstance()->getPosition().y));
-	 stage_.push_back(new SpeedUpgrade(50, 50, Vehicle::getInstance()->getPosition().x - 600, Vehicle::getInstance()->getPosition().y));
+	 stage_.push_back(new DamageUpgrade(50, 50, 194 * 32, 123 * 32));
+	 stage_.push_back(new DamageUpgrade(50, 50, 82 * 32, 108 * 32));
+	 stage_.push_back(new DamageUpgrade(50, 50, 103 * 32, 57 * 32));
+	 stage_.push_back(new DamageUpgrade(50, 50, 160 * 32, 70 * 32));
+	 stage_.push_back(new SpeedUpgrade(50, 50, 102 * 32, 109 * 32));
+	 stage_.push_back(new SpeedUpgrade(50, 50, 221 * 32, 116 * 32));
+	 stage_.push_back(new SpeedUpgrade(50, 50, 103 * 32, 93 * 32));
+	 stage_.push_back(new SpeedUpgrade(50, 50, 40 * 32, 98 * 32));
+	 stage_.push_back(new FuelUpgrade(50, 50, 66 * 32, 116 * 32));
+	 stage_.push_back(new FuelUpgrade(50, 50, 30 * 32, 95 * 32));
+	 stage_.push_back(new FuelUpgrade(50, 50, 81 * 32, 55 * 32));
+	 stage_.push_back(new FuelUpgrade(50, 50, 213 * 32, 121 * 32)); 
 }
 
 void MainState::end()
@@ -79,8 +88,7 @@ void MainState::end()
 
 void MainState::update(Uint32 deltaTime) {
 	Game::getInstance()->getCamera(GAME_CAMERA)->setCentered(true);
-	Game::getInstance()->getCamera(UI_CAMERA)->setCentered(true);
-
+	Game::getInstance()->getCamera(UI_CAMERA)->setCentered(true); 
 	GameState::update(deltaTime);
 }
 
