@@ -27,7 +27,7 @@ DialoguesManager::DialoguesManager()
 	txt_->setPos(150, 600);
 
 
-	//eventoEnCadena(tutorial);
+	eventoEnCadena(tutorial);
 }
 
 
