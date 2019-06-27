@@ -10,7 +10,7 @@ public:
 	~DamageUpgrade();
 private:
 	Animation* sprite_;
-	int boostTime = 15000;
+	int boostTime = 5000;
 
 protected:
 	virtual void beginCallback(b2Contact *contact) override;

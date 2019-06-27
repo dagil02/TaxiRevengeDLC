@@ -114,11 +114,15 @@ void Turret::update(Uint32 deltaTime)
 	}
 	if (boost_) {
 		if (SDL_GetTicks() - boostprogress_ >= boostTime_)  {
-			boost_ = false;
-			boostprogress_ = SDL_GetTicks();
+			boost_ = false; 
 		}
 		sparkleanim_->playAnimation("sparkle", 6.0f, false);
 	}
+	else
+	{
+		boostprogress_ = SDL_GetTicks();
+	}
+	cout << SDL_GetTicks() << endl;
 	sparkleEffect_.update(deltaTime);
 	shotEffect_.update(deltaTime);
 
@@ -174,7 +178,8 @@ void Turret::Shoot()
 	if (!magazine_.empty() && !reloading_) {
 		int a = SDL_GetTicks() - lastTimeShot_;
 		if (a >= cadence_) {
-			if (charged_ || boost_) {
+			if (charged_ || boost_) { 
+				cout << "zep" << endl;
 				crr_ActionShoot_ = specialB.idShoot; //asign int for capture in ShootIC and play sound
 				specialB.damage = magazine_.back()*defaultSpecialDMG_;
 				SPshC_->shoot(specialB, false);
