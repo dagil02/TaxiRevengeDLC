@@ -53,6 +53,10 @@ Game::Game() {
 		cout << "SDL initialization failed\n";
 	}
 	SDL_ShowCursor(0);
+
+
+	//pausa 
+	pause = false;
 }
 
 Game::~Game() {
@@ -99,10 +103,14 @@ void Game::handleEvents(Uint32 deltaTime) {
 		if (event.type == SDL_KEYDOWN) {
 			if (event.key.keysym.sym == SDLK_ESCAPE) {
 				exit_ = true;
-			}			
+			}else if (event.key.keysym.sym == SDLK_p) {
+				pause = true;
+			}else if (event.key.keysym.sym == SDLK_RETURN) {
+				pause = false;
+			}
 		}
 		for (auto cam : cameras_) cam.second->handleInput(deltaTime, event);
-		gmStMachine_->get_CurrentState()->handleEvents(deltaTime, event);
+		if (!pause) gmStMachine_->get_CurrentState()->handleEvents(deltaTime, event);
 		if (event.type == SDL_QUIT) exit_ = true; //exit_ comunica con main a trav�s del m�todo exitGame
 	}
 }
@@ -116,7 +124,7 @@ void Game::update(Uint32 deltaTime)
 	}
 
 	// Update the cameras and the state
-	gmStMachine_->get_CurrentState()->update(deltaTime);
+	if (!pause) gmStMachine_->get_CurrentState()->update(deltaTime);
 	for (auto cam : cameras_) cam.second->update(deltaTime);
 }
 void Game::render(Uint32 deltaTime)

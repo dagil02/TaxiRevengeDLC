@@ -103,4 +103,7 @@ private:
 	double accumulator_;
 	double step_ = 1.0f / 60.0f;
 	int velIterations_ = 8, posIterations_ = 3;
+
+	//pausa
+	bool pause;
 };
