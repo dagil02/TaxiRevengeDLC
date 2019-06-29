@@ -57,6 +57,8 @@ Game::Game() {
 
 	//pausa 
 	pause = false;
+	//pauseMenu = nullptr;
+	//pauseMenu->setCamera(UI_CAMERA);
 }
 
 Game::~Game() {

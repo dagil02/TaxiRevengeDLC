@@ -7,6 +7,7 @@
 #include "AmmoDisplay.h"
 #include "DialoguesManager.h"
 #include "EnemyCountDisplay.h"
+#include "Animation.h"
 
 class UI : public Container, public Observer {
 public:
@@ -24,6 +25,7 @@ public:
 	virtual bool receiveEvent(Event& e) override;
 
 	void setAmmoActive(bool active) const;
+	void pausa(bool pause);
 
 private:
 	static UI* singleton_;
@@ -42,5 +44,8 @@ private:
 
 	Font* font_;
 	SDL_Color fontColor_;
+
+	//pausa
+	Sprite* pauseMenu;
 };
 

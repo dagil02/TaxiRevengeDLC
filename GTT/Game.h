@@ -6,6 +6,8 @@
 #include "SoundManager.h"
 #include "GameStateMachine.h"
 #include "CustomContactListener.h"
+#include "Animation.h"
+#include "Container.h"
 
 using namespace std;
 typedef unsigned int uint;
@@ -72,6 +74,9 @@ public:
 	void setState(string state);
 	void setGameEnd () { exit_ = true; }
 	void setCloseToShop (bool close) { canEnterShop_ = close; }
+
+	//pausa
+	bool getPause() { return pause; }
 
 	void init();
 

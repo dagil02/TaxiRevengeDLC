@@ -36,6 +36,11 @@ UI::UI() {
 	// Enemy count
 	enemyCount_ = new EnemyCountDisplay();
 	UIElements_.push_back(enemyCount_);
+
+	pauseMenu = nullptr;
+	
+
+	pausa(true);
 }
 
 
@@ -56,16 +61,18 @@ UI * UI::getInstance() {
 }
 
 void UI::render(Uint32 deltaTime) {
-	//dialogues_->render(deltaTime);
+	
 	for (auto element : UIElements_) {
 		element->render(deltaTime);
 	}
+
+	pauseMenu->render(Vector2D(123, 567), 200, 200);
 }
 
 void UI::update(Uint32 deltaTime)
 {
 	dialogues_->update(deltaTime);
-
+	
 	if (reloadDisplay_ != nullptr)
 		reloadDisplay_->setActive(reloadDisplay_->isReloading());
 	for (auto element : UIElements_) {
@@ -93,5 +100,14 @@ bool UI::receiveEvent(Event& e) {
 
 void UI::setAmmoActive(bool active) const {
 	ammoDisplay_->setActive(active);
+}
+
+void UI::pausa(bool pause)
+{
+	if (pause) pauseMenu = new Sprite("../Assets/sprites/damageupgrade.png");
+	else { 
+		delete pauseMenu;
+		pauseMenu = nullptr;
+	}
 }
 
