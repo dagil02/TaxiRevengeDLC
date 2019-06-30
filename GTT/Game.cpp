@@ -9,6 +9,7 @@
 #include "Money.h"
 #include "UI.h"
 #include "ShopManager.h"
+#include "Events.h"
 //#include "GameManager.h"
 
 
@@ -59,6 +60,7 @@ Game::Game() {
 	pause = false;
 	//pauseMenu = nullptr;
 	//pauseMenu->setCamera(UI_CAMERA);
+
 }
 
 Game::~Game() {
@@ -106,9 +108,14 @@ void Game::handleEvents(Uint32 deltaTime) {
 			if (event.key.keysym.sym == SDLK_ESCAPE) {
 				exit_ = true;
 			}else if (event.key.keysym.sym == SDLK_p) {  //cambia el estado de la pausa
+
 				pause = true;
+				PauseEvent e(nullptr, pause);
+				broadcastEvent(e);
 			}else if (event.key.keysym.sym == SDLK_RETURN) {  //cambia el estado de la pausa
 				pause = false;
+				PauseEvent e(nullptr, pause);
+				broadcastEvent(e);
 			}
 		}
 		for (auto cam : cameras_) cam.second->handleInput(deltaTime, event);

@@ -12,7 +12,7 @@
 using namespace std;
 typedef unsigned int uint;
 
-class Game {
+class Game : public Observable{
 
 	//hide copyBuilder and 	assignment operator
 	Game(Game&) = delete;

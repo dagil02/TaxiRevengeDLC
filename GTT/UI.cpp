@@ -37,10 +37,10 @@ UI::UI() {
 	enemyCount_ = new EnemyCountDisplay();
 	UIElements_.push_back(enemyCount_);
 
-	pauseMenu = nullptr;
-	
+	//pausa
+	pauseMenu_ = new PauseMenu();
+	UIElements_.push_back(pauseMenu_);
 
-	pausa(true);
 }
 
 
@@ -66,7 +66,7 @@ void UI::render(Uint32 deltaTime) {
 		element->render(deltaTime);
 	}
 
-	pauseMenu->render(Vector2D(123, 567), 200, 200);
+	
 }
 
 void UI::update(Uint32 deltaTime)
@@ -94,20 +94,11 @@ bool UI::receiveEvent(Event& e) {
 	else if (e.type_ == MONEY_CHANGED) {
 		moneyDisplay_->setMoney(static_cast<MoneyChangedEvent*>(&e)->currentMoney_);
 	}
-
+	pauseMenu_->receiveEvent(e);
 	return true;
 }
 
 void UI::setAmmoActive(bool active) const {
 	ammoDisplay_->setActive(active);
-}
-
-void UI::pausa(bool pause)
-{
-	if (pause) pauseMenu = new Sprite("../Assets/sprites/damageupgrade.png");
-	else { 
-		delete pauseMenu;
-		pauseMenu = nullptr;
-	}
 }
 

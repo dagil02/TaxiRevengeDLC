@@ -11,6 +11,7 @@ enum event_type {
 	HEALTH_CHANGED,
 	MONEY_CHANGED,
 	RESPAWNED,
+	PAUSE,
 
 	//Vehicle sound management
 	STARTED_MOVING_FORWARD,
@@ -60,6 +61,16 @@ struct HealthChangedEvent : public Event {
 	int currentHealth_;
 	int previousHealth_;
 	int maxHealth_;
+};
+
+struct PauseEvent : public Event {
+	PauseEvent(Observable* sender,bool pausa) :
+		Event(sender, PAUSE) {
+		this->pausa_ = pausa;
+		
+	}
+
+	bool pausa_;
 };
 
 struct MoneyChangedEvent : public Event {
