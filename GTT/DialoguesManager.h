@@ -4,6 +4,7 @@
 #include "Text.h"
 #include "Container.h"
 #include <memory>
+#include "Sprite.h"
 
 
 
@@ -17,6 +18,7 @@ public:
 	void evento(vector <string> phrases);
 	void update(int deltaTime);
 	void eventoEnCadena(vector <string> phrases);
+	void handleInput(Uint32 deltaTime, const SDL_Event& event);
 
 
 private:
@@ -33,7 +35,8 @@ private:
 	int act_;
 	bool eventChain_;
 	vector <string> phrases_;
-	
+	Sprite* pausa;
+
 	int historia_;
 	int contHist_;
 };

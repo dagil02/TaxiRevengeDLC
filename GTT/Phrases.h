@@ -38,6 +38,7 @@ const vector <string> tutorial = {
 	" Si los giros se te hacen algo tyazhelyy, usa -SPACEBAR- para derrapar da ?" ,
 	" Si te quedas sin gasolina puedes usar las gasolineras para repostar da ?",
 	" Simplemente acercate a una gasolinera y pulsa -G- da ?" ,
+	" Si quieres un descanso pulsa -p- para pausar la matanza da ?" ,
 	" Ahi estan esos sucios VTC! hazle el favor a Galenka de destruirlos da ?"
 };
 

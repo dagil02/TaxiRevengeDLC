@@ -312,6 +312,9 @@
     <ClCompile Include="SpeedUpgrade.cpp">
       <Filter>Archivos de origen\GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="PauseMenu.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InputComponent.h">
@@ -577,6 +580,9 @@
     </ClInclude>
     <ClInclude Include="SpeedUpgrade.h">
       <Filter>Archivos de encabezado\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseMenu.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

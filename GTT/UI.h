@@ -7,6 +7,8 @@
 #include "AmmoDisplay.h"
 #include "DialoguesManager.h"
 #include "EnemyCountDisplay.h"
+#include "Animation.h"
+#include "PauseMenu.h"
 
 class UI : public Container, public Observer {
 public:
@@ -25,6 +27,9 @@ public:
 
 	void setAmmoActive(bool active) const;
 
+	void getEvents(Uint32 deltaTime, const SDL_Event & event);
+	
+
 private:
 	static UI* singleton_;
 
@@ -42,5 +47,8 @@ private:
 
 	Font* font_;
 	SDL_Color fontColor_;
+
+	//pausa
+	PauseMenu* pauseMenu_;
 };
 

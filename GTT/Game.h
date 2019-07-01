@@ -6,11 +6,13 @@
 #include "SoundManager.h"
 #include "GameStateMachine.h"
 #include "CustomContactListener.h"
+#include "Animation.h"
+#include "Container.h"
 
 using namespace std;
 typedef unsigned int uint;
 
-class Game {
+class Game : public Observable{
 
 	//hide copyBuilder and 	assignment operator
 	Game(Game&) = delete;
@@ -73,6 +75,9 @@ public:
 	void setGameEnd () { exit_ = true; }
 	void setCloseToShop (bool close) { canEnterShop_ = close; }
 
+	//pausa
+	bool getPause() { return pause; }
+
 	void init();
 
 private:
@@ -103,4 +108,7 @@ private:
 	double accumulator_;
 	double step_ = 1.0f / 60.0f;
 	int velIterations_ = 8, posIterations_ = 3;
+
+	//pausa
+	bool pause;
 };

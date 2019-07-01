@@ -44,13 +44,9 @@ void MainState::start() {
 	cameraPos -= Vector2D(Game::getInstance()->getCamera(GAME_CAMERA)->getWidth() / 2,
 		Game::getInstance()->getCamera(GAME_CAMERA)->getHeight() / 2);
 	Game::getInstance()->getCamera(GAME_CAMERA)->setPosition(cameraPos);
-
-
-	// Systems
-	//...
-
+	
 	// UI
-	//...
+	
 	Vehicle::getInstance()->getHealthComponent()->registerObserver(UI::getInstance());
 
 	//pushBack GameObj to list

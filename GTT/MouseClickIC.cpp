@@ -62,6 +62,20 @@ void MouseClickIC::handleInput(GameObject* o, Uint32 deltaTime, const SDL_Event 
 				}
 			}//SDL_MOUSEMOTION
 		}
+
+		
+	}
+	if (event.type == SDL_KEYDOWN) {
+		if (event.key.keysym.sym == SDLK_p) {  //cambia el estado de la pausa
+			PauseEvent e(this, true);
+			broadcastEvent(e);
+			std::cout << "enviado" << std::endl;
+		}
+		else if (event.key.keysym.sym == SDLK_RETURN) {  //cambia el estado de la pausa
+			PauseEvent e(this, false);
+			broadcastEvent(e);
+			std::cout << "enviado" << std::endl;
+		}
 	}
 }
 

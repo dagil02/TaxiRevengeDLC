@@ -36,6 +36,9 @@ UI::UI() {
 	// Enemy count
 	enemyCount_ = new EnemyCountDisplay();
 	UIElements_.push_back(enemyCount_);
+
+	
+
 }
 
 
@@ -56,16 +59,18 @@ UI * UI::getInstance() {
 }
 
 void UI::render(Uint32 deltaTime) {
-	//dialogues_->render(deltaTime);
+	
 	for (auto element : UIElements_) {
 		element->render(deltaTime);
 	}
+
+	
 }
 
 void UI::update(Uint32 deltaTime)
 {
 	dialogues_->update(deltaTime);
-
+	
 	if (reloadDisplay_ != nullptr)
 		reloadDisplay_->setActive(reloadDisplay_->isReloading());
 	for (auto element : UIElements_) {
@@ -87,11 +92,16 @@ bool UI::receiveEvent(Event& e) {
 	else if (e.type_ == MONEY_CHANGED) {
 		moneyDisplay_->setMoney(static_cast<MoneyChangedEvent*>(&e)->currentMoney_);
 	}
-
+	//pauseMenu_->receiveEvent(e);
 	return true;
 }
 
 void UI::setAmmoActive(bool active) const {
 	ammoDisplay_->setActive(active);
+}
+
+void UI::getEvents(Uint32 deltaTime, const SDL_Event & event)
+{
+	dialogues_->handleInput(deltaTime, event);
 }
 
