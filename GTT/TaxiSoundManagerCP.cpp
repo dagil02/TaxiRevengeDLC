@@ -40,8 +40,7 @@ void TaxiSoundManagerCP::start()
 	//play first sound
 	if (s_ != nullptr)
 	{
-		s_->playSound_Ch(Channels_["Start"], TAXI_START, 0);
-		cout << "Play start sound" << endl;
+		s_->playSound_Ch(Channels_["Start"], TAXI_START, 0); 
 	}
 }
 

@@ -178,8 +178,7 @@ void Turret::Shoot()
 	if (!magazine_.empty() && !reloading_) {
 		int a = SDL_GetTicks() - lastTimeShot_;
 		if (a >= cadence_) {
-			if (charged_ || boost_) { 
-				cout << "zep" << endl;
+			if (charged_ || boost_) {  
 				crr_ActionShoot_ = specialB.idShoot; //asign int for capture in ShootIC and play sound
 				specialB.damage = magazine_.back()*defaultSpecialDMG_;
 				SPshC_->shoot(specialB, false);

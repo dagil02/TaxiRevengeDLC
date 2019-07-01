@@ -83,7 +83,7 @@ void MainState::end()
 
 
 void MainState::update(Uint32 deltaTime) {
-	Game::getInstance()->getCamera(GAME_CAMERA)->setCentered(true);
+	Game::getInstance()->getCamera(GAME_CAMERA)->setCentered(true); 
 	Game::getInstance()->getCamera(UI_CAMERA)->setCentered(true); 
 	GameState::update(deltaTime);
 }

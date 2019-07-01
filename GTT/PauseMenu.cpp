@@ -17,8 +17,7 @@ PauseMenu::PauseMenu()
 	background_->setHeight(GAS_BACKGROUND_H);
 	background_->addRenderComponent(menu_);
 
-	stage_.push_back(background_);
-	std::cout << "hdbaskjldnaskldñ" << std::endl;
+	stage_.push_back(background_); 
 }
 
 
