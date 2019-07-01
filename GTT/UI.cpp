@@ -37,9 +37,7 @@ UI::UI() {
 	enemyCount_ = new EnemyCountDisplay();
 	UIElements_.push_back(enemyCount_);
 
-	//pausa
-	pauseMenu_ = new PauseMenu();
-	UIElements_.push_back(pauseMenu_);
+	
 
 }
 
@@ -94,11 +92,16 @@ bool UI::receiveEvent(Event& e) {
 	else if (e.type_ == MONEY_CHANGED) {
 		moneyDisplay_->setMoney(static_cast<MoneyChangedEvent*>(&e)->currentMoney_);
 	}
-	pauseMenu_->receiveEvent(e);
+	//pauseMenu_->receiveEvent(e);
 	return true;
 }
 
 void UI::setAmmoActive(bool active) const {
 	ammoDisplay_->setActive(active);
+}
+
+void UI::getEvents(Uint32 deltaTime, const SDL_Event & event)
+{
+	dialogues_->handleInput(deltaTime, event);
 }
 

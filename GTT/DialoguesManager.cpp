@@ -26,6 +26,10 @@ DialoguesManager::DialoguesManager()
 	txt_->setSize(1000, 50);
 	txt_->setPos(150, 600);
 
+	pausa = new Sprite();
+	
+	
+	
 
 	eventoEnCadena(tutorial);
 }
@@ -99,5 +103,24 @@ void DialoguesManager::eventoEnCadena(vector<string> phrases)
 		txt_->setText(phrases[0]);
 		eventChain_ = true;
 		maxTime_ = timeDialogues_;
+	}
+}
+
+void DialoguesManager::handleInput(Uint32 deltaTime, const SDL_Event & event)
+{
+	
+
+	if (event.type == SDL_KEYDOWN) {
+		if (event.key.keysym.sym == SDLK_p) {  //cambia el estado de la pausa
+			pausa = new Sprite("../Assets/sprites/menuPausa.png", 1280, 720);
+			pausa->setCamera(UI_CAMERA);
+			addRenderComponent(pausa);
+			pausa->setAutoPos(false);
+			pausa->setAutoSize(false);
+			
+		}
+		else if (event.key.keysym.sym == SDLK_RETURN) {  //cambia el estado de la pausa
+			delRenderComponent(pausa);
+		}
 	}
 }

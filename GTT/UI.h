@@ -26,6 +26,8 @@ public:
 	virtual bool receiveEvent(Event& e) override;
 
 	void setAmmoActive(bool active) const;
+
+	void getEvents(Uint32 deltaTime, const SDL_Event & event);
 	
 
 private:

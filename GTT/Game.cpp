@@ -119,7 +119,8 @@ void Game::handleEvents(Uint32 deltaTime) {
 			}
 		}
 		for (auto cam : cameras_) cam.second->handleInput(deltaTime, event);
-		if (!pause) gmStMachine_->get_CurrentState()->handleEvents(deltaTime, event);
+		gmStMachine_->get_CurrentState()->handleEvents(deltaTime, event);
+		UI::getInstance()->getEvents(deltaTime, event);
 		if (event.type == SDL_QUIT) exit_ = true; //exit_ comunica con main a traves del metodo exitGame
 	}
 }
