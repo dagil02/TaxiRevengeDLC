@@ -138,11 +138,11 @@ const float HBRK_LATERAL_VELOCITY = 1.0f;
 const float HBRK_SPEED_DECAY = 1.2f;
 const float HBRK_LATERAL_RECOVER = 0.2f;
 
-const int DMG_OVER_TIME = 5;
-const int DMG_OVER_TIME_MOVING = 8;
+const int DMG_OVER_TIME = 2;
+const int DMG_OVER_TIME_MOVING = 4;
 const int DMG_FREQUENCY = 1000;
 const int HP_INCREASE = 100;
-const int KILL_HEAL = 30;
+const int KILL_HEAL = 20;
 
 const float ENVIRONMENT_FRICTION = 0.1f;
 const float DEFAULT_FRICTION = 0.2f;
